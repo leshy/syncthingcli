@@ -35,10 +35,10 @@ p.all([st.getConfig(), st.getConnections()])
               h.map result, (deviceData, deviceName) ->
                 console.log ''
                 if deviceData.Address
-                  console.log colors.green(deviceName), colors.blue(deviceData.Address)
+                  console.log colors.green(h.rpad(deviceName,7,' ')), colors.blue(deviceData.Address)
                 else
                   console.log colors.red(deviceName)
-                h.map deviceData.Folders, (folderData, folderName) -> console.log colors.yellow(h.pad(folderName, 15, ' ')), ' ', colors.green(folderData.completion+ " %")
+                h.map deviceData.Folders, (folderData, folderName) -> console.log colors.yellow(h.pad(folderName, 14, ' ')), ' ', colors.green(folderData.completion+ " %")
                 
               console.log ''
         

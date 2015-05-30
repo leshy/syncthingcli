@@ -49,12 +49,12 @@
       h.map(result, function(deviceData, deviceName){
         console.log('');
         if (deviceData.Address) {
-          console.log(colors.green(deviceName), colors.blue(deviceData.Address));
+          console.log(colors.green(h.rpad(deviceName, 7, ' ')), colors.blue(deviceData.Address));
         } else {
           console.log(colors.red(deviceName));
         }
         return h.map(deviceData.Folders, function(folderData, folderName){
-          return console.log(colors.yellow(h.pad(folderName, 15, ' ')), ' ', colors.green(folderData.completion + " %"));
+          return console.log(colors.yellow(h.pad(folderName, 14, ' ')), ' ', colors.green(folderData.completion + " %"));
         });
       });
       return console.log('');
