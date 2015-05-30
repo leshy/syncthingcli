@@ -8,14 +8,11 @@
   colors = require('colors');
   util = require('util');
   self = 'osvetnik';
-  p.all([st.getConfig(), st.getConnections()]).then(function(result){
-    var config, connections, devices;
-    config = result[0], connections = result[1];
+  p.all([st.getDiscovery(), st.getConfig(), st.getConnections()]).then(function(result){
+    var discovery, config, connections, devices;
+    discovery = result[0], config = result[1], connections = result[2];
     devices = h.dictFromArray(config.Devices, function(it){
       var deviceID, deviceFolders;
-      if (it.Name === self) {
-        return;
-      }
       deviceID = it.DeviceID;
       deviceFolders = h.dictFromArray(config.Folders, function(it){
         if (in$(deviceID, map(function(it){
@@ -58,9 +55,9 @@
         });
       });
       return console.log('');
+    })['catch'](function(error){
+      return console.log('Error', error.stack);
     });
-  })['catch'](function(error){
-    return console.log('Error', error.stack);
   });
   function in$(x, xs){
     var i = -1, l = xs.length >>> 0;
