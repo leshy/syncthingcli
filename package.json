@@ -1,7 +1,7 @@
 {
-  "name": "syncthing",
+  "name": "syncthingcli",
   "version": "1.0.0",
-  "description": "",
+  "description": "syncthing console client",
   "main": "app.js",
   "dependencies": {
     "bluebird": "^2.9.27",
@@ -14,6 +14,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "lesh@sysphere.org",
   "license": "ISC"
 }
