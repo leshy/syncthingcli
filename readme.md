@@ -1,0 +1,1 @@
+just a simple client to syncthing to get an overview without the need to start the browser. livescript

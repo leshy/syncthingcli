@@ -7,7 +7,8 @@
     "bluebird": "^2.9.27",
     "bluebird-extra": "^0.1.7",
     "prelude-ls": "^1.1.2",
-    "syncthing-node": "^0.9.19"
+    "syncthing-node": "git://github.com/leshy/syncthing-node.git",
+    "helpers": "git://github.com/leshy/nodejs-helpers.git"
   },
   "devDependencies": {},
   "scripts": {
